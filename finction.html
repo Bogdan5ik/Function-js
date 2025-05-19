@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Функция</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style>
+		.background {
+			background-image: url('road.jpg');
+			background-size: 100% 100%;
+			height: 400px;
+		}
+		.human {
+			background-image: url('player.png');
+			background-size: 100% 100%;
+			height: 130px;
+			width: 50px;
+			
+			position: absolute;
+			transition: 1s;
+			left: 50px;
+			top: 10px;
+		}
+
+		.chat{
+			width: 100%;
+			background-color: orange;
+			display: flex;
+			justify-content: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="background">
+		<div class="human">
+		</div>
+	</div>
+	<p class="chat"></p>
+	<script>
+			let player = document.querySelector('.human');
+
+			let numLeft = 50;
+			let numTop = 50;
+
+	function moveLeft(step) {
+		numLeft -= step;
+		player.style.left = numLeft + "px";
+	}
+
+	function moveRight(step) {
+		numLeft += step;
+		player.style.left = numLeft + "px";
+	}
+
+	function moveBottom(step) {
+		numTop += step;
+		player.style.top = numTop + "px";
+	}
+
+	function moveTop(step) {
+		numTop -= step;
+		player.style.top = numTop + "px";
+	}
+
+	function talk(message) {
+		document.querySelector('.chat').innerHTML = message;
+	}
+	</script>
+</body>
+</html>
