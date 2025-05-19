@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: absolute;
+            transition: 0.5s;
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: absolute;
+            transition: 0.5s;
+            left: 1000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box2"></div>
+    
+    
+
+
+
+
+    <script type="text/javascript">
+        let zr = 0;
+        let re = 1000;
+        let moveLeft = function() {
+            zr += 50;
+            document.querySelector('.box').style.left = zr + "px";
+        }
+
+        let moveLeft2 = function() {
+            re -= 50;
+            document.querySelector('.box2').style.left = re + "px";
+        }
+        let nit = function() {
+            document.querySelector('.box').style.display = "none";
+            document.querySelector('.box2').style.display = "none"
+        }
+
+        setInterval(moveLeft, 1000)
+        setInterval(moveLeft2, 1000)
+        setTimeout(nit, 5000)
+    </script>
+</body>
+</html>
